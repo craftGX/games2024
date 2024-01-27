@@ -1,0 +1,132 @@
+:root {
+  --green: rgb(19, 236, 19);
+  --jaune: rgb(248, 248, 16);
+  --orange: rgb(255, 171, 15);
+  --red: rgb(255, 72, 0);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  color: var(--green);
+}
+
+.titre h1 {
+  font-size: 3em;
+  margin: 20px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  animation: titreColorVariation 5s linear infinite;
+}
+@keyframes titreColorVariation {
+  0% {
+    color: var(--jaune);
+  }
+  25% {
+    color: var(--orange);
+  }
+  50% {
+    color: var(--red);
+  }
+  50% {
+    color: var(--orange);
+  }
+  100% {
+    color: var(--jaune);
+  }
+}
+
+#choiceBtn {
+  margin: 15px 15px;
+  width: 100px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+#choiceBtn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+#choiceBtn:active {
+  color: #000;
+}
+
+#choiceBtn:active:after {
+  background: transparent;
+}
+
+#choiceBtn:hover:before {
+  opacity: 1;
+}
+
+#choiceBtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+footer {
+  margin: 20px 0px;
+  color: #ffffff;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ff2d95 0px 0px 20px, #ff2d95 0px 0px 30px, #ff2d95 0px 0px 40px,
+    #ff2d95 0px 0px 50px, #ff2d95 0px 0px 75px;
+}
